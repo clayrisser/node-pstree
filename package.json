@@ -1,0 +1,78 @@
+{
+  "name": "proc-tree",
+  "version": "0.0.1",
+  "description": "get process tree from nodejs",
+  "keywords": [
+    "proc-tree",
+    "proc",
+    "process",
+    "tree",
+    "ps"
+  ],
+  "homepage": "https://github.com/codejamninja/proc-tree",
+  "bugs": {
+    "url": "https://github.com/codejamninja/proc-tree/issues",
+    "email": "jam@codejam.ninja"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jam Risser",
+    "email": "jam@codejam.ninja",
+    "url": "https://codejam.ninja"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codejamninja/proc-tree"
+  },
+  "scripts": {
+    "build": "make -s build",
+    "clean": "make -s clean",
+    "format": "make -s format",
+    "lint": "make -s lint",
+    "node-gyp": "node-gyp",
+    "prepare": "make -s prepare",
+    "purge": "make -s purge",
+    "spellcheck": "make -s spellcheck",
+    "start": "make -s start",
+    "test": "make -s test"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "node-sigar": "^0.0.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/circular-json": "^0.4.0",
+    "@types/jest": "^25.1.1",
+    "@types/node": "^13.5.3",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "circular-json": "^0.5.9",
+    "cspell": "^4.0.46",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript": "^6.3.1",
+    "eslint-config-jam": "^0.2.20",
+    "gnumake": "^0.1.0",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.5"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "eslintIgnore": [
+    "lib"
+  ],
+  "jest": {
+    "testRegex": "tests(/|/.*/)[^_/]*[jt]sx?$",
+    "verbose": true
+  }
+}
