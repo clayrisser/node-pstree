@@ -1,17 +1,17 @@
 {
-  "name": "proc-tree",
+  "name": "node-pstree",
   "version": "0.0.1",
   "description": "get process tree from nodejs",
   "keywords": [
-    "proc-tree",
+    "node-pstree",
     "proc",
     "process",
     "tree",
     "ps"
   ],
-  "homepage": "https://github.com/codejamninja/proc-tree",
+  "homepage": "https://github.com/codejamninja/node-pstree",
   "bugs": {
-    "url": "https://github.com/codejamninja/proc-tree/issues",
+    "url": "https://github.com/codejamninja/node-pstree/issues",
     "email": "jam@codejam.ninja"
   },
   "license": "MIT",
@@ -26,7 +26,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codejamninja/proc-tree"
+    "url": "https://github.com/codejamninja/node-pstree"
   },
   "scripts": {
     "build": "make -s build",

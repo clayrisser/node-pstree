@@ -1,6 +1,6 @@
-# proc-tree
+# node-pstree
 
-[![GitHub stars](https://img.shields.io/github/stars/codejamninja/proc-tree.svg?style=social&label=Stars)](https://github.com/codejamninja/proc-tree)
+[![GitHub stars](https://img.shields.io/github/stars/codejamninja/node-pstree.svg?style=social&label=Stars)](https://github.com/codejamninja/node-pstree)
 
 > get process tree from nodejs
 
@@ -13,7 +13,7 @@ Please ★ this repo if you found it useful ★ ★ ★
 ## Installation
 
 ```sh
-npm install --save proc-tree
+npm install --save node-pstree
 ```
 
 ## Dependencies
@@ -22,29 +22,29 @@ npm install --save proc-tree
 
 ## Usage
 
-[Contribute](https://github.com/codejamninja/proc-tree/blob/master/CONTRIBUTING.md) usage docs
+[Contribute](https://github.com/codejamninja/node-pstree/blob/master/CONTRIBUTING.md) usage docs
 
 ## Support
 
-Submit an [issue](https://github.com/codejamninja/proc-tree/issues/new)
+Submit an [issue](https://github.com/codejamninja/node-pstree/issues/new)
 
 ## Screenshots
 
-[Contribute](https://github.com/codejamninja/proc-tree/blob/master/CONTRIBUTING.md) a screenshot
+[Contribute](https://github.com/codejamninja/node-pstree/blob/master/CONTRIBUTING.md) a screenshot
 
 ## Contributing
 
-Review the [guidelines for contributing](https://github.com/codejamninja/proc-tree/blob/master/CONTRIBUTING.md)
+Review the [guidelines for contributing](https://github.com/codejamninja/node-pstree/blob/master/CONTRIBUTING.md)
 
 ## License
 
-[MIT License](https://github.com/codejamninja/proc-tree/blob/master/LICENSE)
+[MIT License](https://github.com/codejamninja/node-pstree/blob/master/LICENSE)
 
 [Jam Risser](https://codejam.ninja) © 2020
 
 ## Changelog
 
-Review the [changelog](https://github.com/codejamninja/proc-tree/blob/master/CHANGELOG.md)
+Review the [changelog](https://github.com/codejamninja/node-pstree/blob/master/CHANGELOG.md)
 
 ## Credits
 
