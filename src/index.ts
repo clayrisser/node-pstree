@@ -15,22 +15,36 @@ export interface ProcNode extends PidProcInfo {
   children: ProcNode[];
   depth: number;
   parent: ProcNode | null;
+  parents: ProcNode[];
 }
 
-export type ProcTree = ProcNode;
+export type PSTree = ProcNode | null;
+
+export function getParents(procNode: ProcNode): ProcNode[] {
+  if (!procNode.parent) return [];
+  return [...getParents(procNode.parent), procNode.parent];
+}
 
 export function getPidsProcInfo(): PidsProcInfo {
   return sigar.procList.reduce((pidsProcInfo: PidsProcInfo, pid: number) => {
-    pidsProcInfo[pid.toString()] = {
-      args: sigar.getProcArgs(pid),
-      pid,
-      ...sigar.getProcState(pid)
-    };
+    pidsProcInfo[pid.toString()] = new Proxy(
+      {
+        args: sigar.getProcArgs(pid),
+        pid,
+        ...sigar.getProcState(pid)
+      },
+      {
+        get(target: any, prop) {
+          if (prop === 'parents') return getParents(target);
+          return target[prop];
+        }
+      }
+    );
     return pidsProcInfo;
   }, {});
 }
 
-export default function procTree() {
+export default function psTree(rootPid?: number): PSTree {
   const pidsProcInfo = getPidsProcInfo();
   function getParent(procNode: ProcNode): ProcNode | null {
     const parentNode =
@@ -47,13 +61,15 @@ export default function procTree() {
   }
   return Object.entries(pidsProcInfo).reduce(
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    (procTree: ProcTree | null, [_pid, pidProcInfo]: [string, PidProcInfo]) => {
+    (psTree: PSTree, [_pid, pidProcInfo]: [string, PidProcInfo]) => {
       const procNode = pidProcInfo as ProcNode;
       if (!procNode.children) procNode.children = [];
       procNode.parent = getParent(procNode);
       procNode.depth = procNode.parent ? procNode.parent.depth + 1 : 0;
-      if (!procTree) procTree = procNode;
-      return procTree;
+      if (typeof rootPid === 'number' ? procNode.pid === rootPid : !psTree) {
+        psTree = procNode;
+      }
+      return psTree;
     },
     null
   );
