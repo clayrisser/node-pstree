@@ -30,6 +30,7 @@ export function getPidsProcInfo(): PidsProcInfo {
     let args: string[] = [];
     try {
       args = sigar.getProcArgs(pid);
+      // eslint-disable-next-line no-empty
     } catch (err) {}
     pidsProcInfo[pid.toString()] = new Proxy(
       {

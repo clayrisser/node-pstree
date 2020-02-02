@@ -71,7 +71,6 @@ clean:
 	-@node-pre-gyp clean
 	-@rm -rf node_modules/.cache || true
 	-@rm -rf node_modules/.tmp || true
-	@cd deps && $(MAKE) -s -f Makefile.sigar clean
 	@git clean -fXd -e \!node_modules -e \!node_modules/**/* -e \!yarn.lock
 
 .PHONY: purge
