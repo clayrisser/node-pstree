@@ -27,9 +27,13 @@ export function getParents(procNode: ProcNode): ProcNode[] {
 
 export function getPidsProcInfo(): PidsProcInfo {
   return sigar.procList.reduce((pidsProcInfo: PidsProcInfo, pid: number) => {
+    let args: string[] = [];
+    try {
+      args = sigar.getProcArgs(pid);
+    } catch (err) {}
     pidsProcInfo[pid.toString()] = new Proxy(
       {
-        args: sigar.getProcArgs(pid),
+        args,
         pid,
         ...sigar.getProcState(pid)
       },
