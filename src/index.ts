@@ -40,7 +40,7 @@ export function getPidsProcInfo(): PidsProcInfo {
       args = sigar.getProcArgs(pid);
       // eslint-disable-next-line no-empty
     } catch (err) {}
-    let state = {} as ProcState;
+    let state: ProcState | {} = {};
     try {
       state = sigar.getProcState(pid);
       // eslint-disable-next-line no-empty
