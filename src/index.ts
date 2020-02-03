@@ -2,9 +2,17 @@ import Sigar, { ProcState } from 'node-sigar';
 
 const sigar = new Sigar();
 
-export interface PidProcInfo extends ProcState {
+export interface PidProcInfo {
   args: string[];
+  name?: string;
+  nice?: number;
   pid: number;
+  ppid?: number;
+  priority?: number;
+  processor?: number;
+  state?: string;
+  threads?: number;
+  tty?: number;
 }
 
 export interface PidsProcInfo {
@@ -32,11 +40,16 @@ export function getPidsProcInfo(): PidsProcInfo {
       args = sigar.getProcArgs(pid);
       // eslint-disable-next-line no-empty
     } catch (err) {}
+    let state = {} as ProcState;
+    try {
+      state = sigar.getProcState(pid);
+      // eslint-disable-next-line no-empty
+    } catch (err) {}
     pidsProcInfo[pid.toString()] = new Proxy(
       {
         args,
         pid,
-        ...sigar.getProcState(pid)
+        ...state
       },
       {
         get(target: any, prop) {
@@ -52,8 +65,9 @@ export function getPidsProcInfo(): PidsProcInfo {
 export default function psTree(rootPid?: number): PSTree {
   const pidsProcInfo = getPidsProcInfo();
   function getParent(procNode: ProcNode): ProcNode | null {
-    const parentNode =
-      (pidsProcInfo[procNode.ppid.toString()] as ProcNode) || null;
+    const parentNode = procNode.ppid
+      ? (pidsProcInfo[procNode.ppid.toString()] as ProcNode) || null
+      : null;
     if (parentNode) {
       if (!parentNode.children) parentNode.children = [];
       parentNode.children.push(procNode);
