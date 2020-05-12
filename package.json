@@ -1,6 +1,6 @@
 {
   "name": "node-pstree",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "get process tree from nodejs",
   "keywords": [
     "node-pstree",
@@ -41,29 +41,29 @@
     "test": "make -s test"
   },
   "dependencies": {
-    "core-js": "^3.6.4",
-    "node-sigar": "^0.0.7"
+    "core-js": "^3.6.5",
+    "node-sigar": "^0.0.16"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
-    "@babel/node": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/preset-typescript": "^7.8.3",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-typescript": "^7.9.0",
     "@types/circular-json": "^0.4.0",
-    "@types/jest": "^25.1.1",
-    "@types/node": "^13.5.3",
-    "@typescript-eslint/eslint-plugin": "^2.18.0",
-    "@typescript-eslint/parser": "^2.18.0",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.5",
+    "@typescript-eslint/eslint-plugin": "^2.32.0",
+    "@typescript-eslint/parser": "^2.32.0",
     "circular-json": "^0.5.9",
-    "cspell": "^4.0.46",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-typescript": "^6.3.1",
+    "cspell": "^4.0.61",
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb-typescript": "^7.2.1",
     "eslint-config-jam": "^0.2.20",
-    "gnumake": "^0.1.0",
-    "jest": "^25.1.0",
-    "prettier": "^1.19.1",
-    "typescript": "^3.7.5"
+    "gnumake": "^0.3.3",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "typescript": "^3.8.3"
   },
   "engines": {
     "node": ">=6.0.0"
