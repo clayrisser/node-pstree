@@ -4,6 +4,8 @@
 
 > get process tree from nodejs
 
+![](assets/node-pstree.png)
+
 Please ★ this repo if you found it useful ★ ★ ★
 
 ## Features
